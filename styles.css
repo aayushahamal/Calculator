@@ -1,0 +1,129 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    transition: background-color 0.5s;
+    position: relative; /* Ensure relative positioning for pseudo-elements */
+}
+
+/* Sparse stars in dark mode */
+body.dark-mode::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+}
+
+/* Container for centering the calculator */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Calculator title */
+#calculator-title {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Calculator styles */
+.calculator {
+    background-color: #FF1493; /* Dark pink */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px; /* Increased width for traditional layout */
+}
+
+/* Screen styles */
+.calculator-screen {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: none;
+    text-align: right;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Key styles */
+.calculator-keys button {
+    width: 18%; /* Adjusted width for symbols and numbers on same row */
+    height: 60px;
+    margin: 5px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/* Operator button styles */
+.operator {
+    background-color: #FF9500;
+    color: white;
+}
+
+/* Equal sign button styles */
+.equal-sign {
+    height: 130px;
+    background-color: #FF9500;
+    color: white;
+}
+
+/* All clear button styles */
+.all-clear {
+    background-color: #FF3B30;
+    color: white;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: lightpink;
+}
+
+body.light-mode .calculator {
+    background-color: #FF69B4; /* bold pink */
+}
+
+body.light-mode #calculator-title {
+    color: black;
+}
+
+#mode-toggle {
+    width: 100%;
+    height: 50px;
+    background-color: black; /* Changed background color to black */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
